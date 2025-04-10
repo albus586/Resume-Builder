@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron bg-light shadow-sm rounded p-4 mb-5">
+    <h1 class="display-4 text-primary">Welcome to Flask Multi-Route App!</h1>
+    <p class="lead">This Flask application demonstrates multiple routes with unique functionality.</p>
+    <hr class="my-4">
+    <p>Explore different features by clicking on the cards below or using the navigation menu.</p>
+    <p class="d-flex justify-content-end">
+        <a class="btn btn-primary btn-lg" href="/about" role="button">Learn more</a>
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-primary feature-card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="card-title mb-0"><i class="fas fa-cloud"></i> Weather Forecasts</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Get simulated weather data for cities around the world. Updated dynamically on each
+                    refresh.</p>
+                <div class="card-icons">
+                    <i class="fas fa-sun text-warning"></i>
+                    <i class="fas fa-cloud text-secondary"></i>
+                    <i class="fas fa-umbrella text-primary"></i>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-primary">
+                <a href="/weather" class="btn btn-outline-primary w-100">View Weather</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-success feature-card">
+            <div class="card-header bg-success text-white">
+                <h5 class="card-title mb-0"><i class="fas fa-calculator"></i> Calculator</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Perform basic arithmetic operations including addition, subtraction,
+                    multiplication, and division.</p>
+                <div class="card-icons">
+                    <span class="badge bg-success">+</span>
+                    <span class="badge bg-success">-</span>
+                    <span class="badge bg-success">×</span>
+                    <span class="badge bg-success">÷</span>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-success">
+                <a href="/calculator" class="btn btn-outline-success w-100">Use Calculator</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-info feature-card">
+            <div class="card-header bg-info text-white">
+                <h5 class="card-title mb-0"><i class="fas fa-tasks"></i> Todo List</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Manage your tasks with our simple todo application. Includes a RESTful API for
+                    developers.</p>
+                <div class="card-icons">
+                    <i class="fas fa-check-square text-info"></i>
+                    <i class="fas fa-list-ul text-info"></i>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-info">
+                <a href="/todos" class="btn btn-outline-info w-100">Manage Todos</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-warning feature-card">
+            <div class="card-header bg-warning text-dark">
+                <h5 class="card-title mb-0"><i class="fas fa-quote-left"></i> Random Quotes</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Find inspiration with randomly selected quotes from famous personalities and
+                    thinkers.</p>
+                <div class="card-icons">
+                    <i class="fas fa-lightbulb text-warning"></i>
+                    <i class="fas fa-quote-right text-warning"></i>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-warning">
+                <a href="/quote" class="btn btn-outline-warning w-100">Get Inspired</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-danger feature-card">
+            <div class="card-header bg-danger text-white">
+                <h5 class="card-title mb-0"><i class="fas fa-clock"></i> Time Service</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Check the current time and date with our time service. Updates in real-time on page
+                    refresh.</p>
+                <div class="card-icons">
+                    <i class="fas fa-calendar-alt text-danger"></i>
+                    <i class="fas fa-hourglass-half text-danger"></i>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-danger">
+                <a href="/time" class="btn btn-outline-danger w-100">View Time</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 border-secondary feature-card">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="card-title mb-0"><i class="fas fa-info-circle"></i> About</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Learn more about this application, its features, and the technologies used in
+                    building it.</p>
+                <div class="card-icons">
+                    <i class="fab fa-python text-secondary"></i>
+                    <i class="fab fa-flask text-secondary"></i>
+                    <i class="fab fa-bootstrap text-secondary"></i>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-secondary">
+                <a href="/about" class="btn btn-outline-secondary w-100">About Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Add animation effects to cards
+    document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.feature-card');
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('animate__animated', 'animate__fadeInUp');
+            }, index * 100);
+        });
+    });
+</script>
+{% endblock %}

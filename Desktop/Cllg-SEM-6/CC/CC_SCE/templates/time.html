@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card text-center">
+            <div class="card-header">
+                <h2>Current Time Service</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-header">Current Time</div>
+                            <div class="card-body">
+                                <h1 class="display-4">{{ time }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">Current Date</div>
+                            <div class="card-body">
+                                <h1 class="display-4">{{ date }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="{{ url_for('time_service') }}" class="btn btn-primary">Refresh</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

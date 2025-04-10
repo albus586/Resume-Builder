@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="about-section animate__animated animate__fadeIn">
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h1 class="mb-0"><i class="fas fa-info-circle me-2"></i>About This Application</h1>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4 class="text-primary">Multi-Route Flask Application</h4>
+                    <p class="lead">This application demonstrates various functionalities using Flask's routing
+                        capabilities.</p>
+
+                    <h5 class="mt-4"><i class="fas fa-cogs me-2 text-secondary"></i>Features</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><i class="fas fa-cloud text-primary me-2"></i>Weather
+                                    forecast simulation</li>
+                                <li class="list-group-item"><i class="fas fa-calculator text-success me-2"></i>Simple
+                                    calculator</li>
+                                <li class="list-group-item"><i class="fas fa-tasks text-info me-2"></i>Todo list
+                                    management</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item"><i class="fas fa-quote-left text-warning me-2"></i>Random
+                                    inspirational quotes</li>
+                                <li class="list-group-item"><i class="fas fa-clock text-danger me-2"></i>Current time
+                                    service</li>
+                                <li class="list-group-item"><i class="fas fa-info-circle text-secondary me-2"></i>About
+                                    page (this page)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4"><i class="fas fa-code me-2 text-secondary"></i>Technical Details</h5>
+                    <p>Each route demonstrates a different aspect of Flask's capabilities, including:</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fas fa-file-code text-primary me-2"></i>Template
+                                    rendering with Jinja2</li>
+                                <li class="list-group-item"><i class="fas fa-keyboard text-primary me-2"></i>Form
+                                    handling</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fas fa-server text-primary me-2"></i>RESTful API
+                                    endpoints</li>
+                                <li class="list-group-item"><i class="fas fa-sitemap text-primary me-2"></i>Dynamic
+                                    content generation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card bg-light mb-3">
+                        <div class="card-header bg-secondary text-white">
+                            <h5 class="mb-0"><i class="fas fa-tools me-2"></i>Technologies Used</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="tech-stack">
+                                <div class="tech-item">
+                                    <i class="fab fa-python fa-3x text-primary"></i>
+                                    <p>Python</p>
+                                </div>
+                                <div class="tech-item">
+                                    <i class="fas fa-flask fa-3x text-danger"></i>
+                                    <p>Flask</p>
+                                </div>
+                                <div class="tech-item">
+                                    <i class="fab fa-html5 fa-3x text-warning"></i>
+                                    <p>HTML5</p>
+                                </div>
+                                <div class="tech-item">
+                                    <i class="fab fa-css3-alt fa-3x text-info"></i>
+                                    <p>CSS3</p>
+                                </div>
+                                <div class="tech-item">
+                                    <i class="fab fa-js fa-3x text-success"></i>
+                                    <p>JavaScript</p>
+                                </div>
+                                <div class="tech-item">
+                                    <i class="fab fa-bootstrap fa-3x text-purple"></i>
+                                    <p>Bootstrap</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header bg-dark text-white">
+                            <h5 class="mb-0"><i class="fas fa-user-circle me-2"></i>Created By</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <i class="fas fa-user-graduate fa-4x mb-3 text-primary"></i>
+                            <h5>Flask Developer</h5>
+                            <p class="text-muted">April 2025</p>
+                            <a href="/" class="btn btn-primary"><i class="fas fa-home me-2"></i>Back to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Add animation effects
+    document.addEventListener('DOMContentLoaded', function () {
+        const items = document.querySelectorAll('.list-group-item, .tech-item');
+        items.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('animate__animated', 'animate__fadeInRight');
+            }, index * 100);
+        });
+    });
+</script>
+{% endblock %}

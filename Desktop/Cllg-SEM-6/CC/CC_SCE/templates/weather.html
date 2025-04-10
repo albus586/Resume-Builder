@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="animate__animated animate__fadeIn">
+    <h1 class="mb-4 text-primary"><i class="fas fa-cloud me-2"></i>Weather Forecast</h1>
+
+    <div class="row">
+        {% for city, data in cities.items() %}
+        <div class="col-md-3 mb-4 animate__animated animate__fadeInUp"
+            style="animation-delay: {{ loop.index0 * 0.1 }}s">
+            <div class="card h-100 shadow-sm">
+                <div
+                    class="card-header {% if data.condition == 'Sunny' %}bg-warning{% elif data.condition == 'Cloudy' %}bg-secondary{% elif data.condition == 'Rainy' %}bg-primary{% elif data.condition == 'Snowy' %}bg-info{% elif data.condition == 'Foggy' %}bg-light{% elif data.condition == 'Stormy' %}bg-dark text-white{% elif data.condition == 'Windy' %}bg-info{% endif %}">
+                    <h5 class="mb-0">{{ city }}</h5>
+                </div>
+                <div class="card-body text-center">
+                    <h3 class="card-title">{{ data.temp }}°C</h3>
+                    <p class="card-text">{{ data.condition }}</p>
+
+                    <div class="weather-icon mb-3">
+                        {% if data.condition == 'Sunny' %}
+                        <i class="fas fa-sun fa-3x text-warning"></i>
+                        {% elif data.condition == 'Cloudy' %}
+                        <i class="fas fa-cloud fa-3x text-secondary"></i>
+                        {% elif data.condition == 'Rainy' %}
+                        <i class="fas fa-cloud-rain fa-3x text-primary"></i>
+                        {% elif data.condition == 'Snowy' %}
+                        <i class="fas fa-snowflake fa-3x text-info"></i>
+                        {% elif data.condition == 'Foggy' %}
+                        <i class="fas fa-smog fa-3x text-secondary"></i>
+                        {% elif data.condition == 'Stormy' %}
+                        <i class="fas fa-bolt fa-3x text-dark"></i>
+                        {% elif data.condition == 'Windy' %}
+                        <i class="fas fa-wind fa-3x text-info"></i>
+                        {% endif %}
+                    </div>
+
+                    <div class="temperature-range">
+                        <span class="text-primary">{{ data.temp - 5 }}°</span>
+                        <span class="temperature-bar mx-2">
+                            <span class="progress">
+                                <span class="progress-bar bg-danger" role="progressbar" style="width: 100%"></span>
+                            </span>
+                        </span>
+                        <span class="text-danger">{{ data.temp + 5 }}°</span>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <small class="text-muted">Last updated: {{ now().strftime('%H:%M') }}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="alert alert-info mt-3 shadow-sm">
+        <div class="d-flex align-items-center">
+            <div class="me-3">
+                <i class="fas fa-info-circle fa-2x"></i>
+            </div>
+            <div>
+                <p class="mb-1"><strong>Note:</strong> This is simulated weather data for demonstration purposes only.
+                </p>
+                <p class="mb-0">Each time you refresh the page, random weather conditions will be generated.</p>
+            </div>
+        </div>
+        <div class="text-end mt-2">
+            <a href="{{ url_for('weather') }}" class="btn btn-outline-info btn-sm">
+                <i class="fas fa-sync-alt me-1"></i> Refresh Weather
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Add current time to "now" function
+        const dateElements = document.querySelectorAll('.text-muted');
+        dateElements.forEach(el => {
+            if (el.textContent.includes('Last updated')) {
+                const now = new Date();
+                const time = now.getHours().toString().padStart(2, '0') + ':' +
+                    now.getMinutes().toString().padStart(2, '0');
+                el.textContent = 'Last updated: ' + time;
+            }
+        });
+    });
+</script>
+{% endblock %}
