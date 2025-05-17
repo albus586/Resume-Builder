@@ -1,0 +1,68 @@
+{
+    "personal_details": {
+      "full_name": "",
+      "phone_number": "",
+      "email_address": "",
+      "linkedin_profile": "",
+      "github_profile": "",
+      "current_location": {
+        "city": "",
+        "state": "",
+        "country": ""
+      }
+    },
+    "career_objective": "",
+    "education": [
+      {
+        "degree": "",
+        "university": "",
+        "location": "",
+        "start_year": "",
+        "end_year": ""
+      }
+    ],
+    "technical_skills": {
+      "programming_languages": [],
+      "frameworks_libraries": [],
+      "tools_softwares": [],
+      "cloud_platforms": [],
+      "databases": []
+    },
+    "work_experience": [
+      {
+        "job_title": "",
+        "company_name": "",
+        "location": "",
+        "start_date": "",
+        "end_date": "",
+        "responsibilities": []
+      }
+    ],
+    "projects": [
+      {
+        "project_title": "",
+        "short_description": "",
+        "technologies_used": []      }
+    ],
+    "certifications_courses": [
+      {
+        "course_name": "",
+        "issuing_organization": "",
+        "completion_date": ""
+      }
+    ],
+    "research_publications": [
+      {
+        "title": "",
+        "published_in": "",
+        "date_of_publication": ""
+      }
+    ],
+    "achievements_awards": [
+      {
+        "title": "",
+        "awarding_organization": "",
+        "date": ""
+      }
+    ]
+  }
