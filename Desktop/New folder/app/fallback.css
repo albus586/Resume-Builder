@@ -1,0 +1,49 @@
+/* This file provides fallback values for modern color functions */
+
+@supports not (color: oklch(0 0 0)) {
+  /* Create fallbacks for any oklch colors */
+  :root {
+    --oklch-fallback-1: #00adb5;
+    --oklch-fallback-2: #393e46;
+    --oklch-fallback-3: #eeeeee;
+    --oklch-fallback-4: #ffffff;
+    --oklch-fallback-5: #222831;
+  }
+}
+
+@supports not (color: oklab(0 0 0)) {
+  /* Create fallbacks for any oklab colors */
+  :root {
+    --oklab-fallback-1: #00adb5;
+    --oklab-fallback-2: #393e46;
+    --oklab-fallback-3: #eeeeee;
+    --oklab-fallback-4: #ffffff;
+    --oklab-fallback-5: #222831;
+  }
+}
+
+/* Override any animations or components using oklch/oklab */
+[class*="animate-"] {
+  --tw-text-opacity: 1 !important;
+  --tw-bg-opacity: 1 !important;
+  --tw-border-opacity: 1 !important;
+  --tw-ring-opacity: 1 !important;
+  --tw-shadow-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* More aggressive override for any component using modern color formats */
+:root {
+  --tw-color-primary: #00adb5 !important;
+  --tw-color-secondary: #393e46 !important;
+  --tw-color-accent: #eeeeee !important;
+  --tw-color-background: #ffffff !important;
+  --tw-color-foreground: #222831 !important;
+}
+
+/* Target modern color functions specifically in animations and transitions */
+[style*="oklab"],
+[style*="oklch"] {
+  color: #222831 !important;
+  background-color: #ffffff !important;
+  border-color: #393e46 !important;
+}

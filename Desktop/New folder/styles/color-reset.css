@@ -1,0 +1,58 @@
+/* Color function reset - this must be loaded FIRST */
+
+/* Provide fallbacks for modern color formats */
+:root {
+  /* Basic color palette */
+  --color-primary: #00adb5;
+  --color-secondary: #393e46;
+  --color-accent: #eeeeee;
+  --color-background: #ffffff;
+  --color-foreground: #252525;
+  --color-border: #ebebeb;
+
+  /* Fallbacks for oklab/oklch */
+  --oklab-func1: #393e46;
+  --oklab-func2: #222831;
+  --oklch-func1: #00adb5;
+  --oklch-func2: #00565a;
+
+  /* Force Tailwind opacity values */
+  --tw-text-opacity: 1;
+  --tw-bg-opacity: 1;
+  --tw-border-opacity: 1;
+  --tw-ring-opacity: 1;
+
+  /* Colors for specific components */
+  --pdf-border-color: #00adb5;
+  --pdf-bg-color: rgba(0, 173, 181, 0.1);
+}
+
+/* Basic color overrides */
+.text-primary {
+  color: #00adb5 !important;
+}
+.bg-primary {
+  background-color: #00adb5 !important;
+}
+.border-primary {
+  border-color: #00adb5 !important;
+}
+
+.text-secondary {
+  color: #393e46 !important;
+}
+.bg-secondary {
+  background-color: #393e46 !important;
+}
+.border-secondary {
+  border-color: #393e46 !important;
+}
+
+/* Force specific styling for PDF viewer selection */
+.border-\[\#00ADB5\] {
+  border-color: #00adb5 !important;
+}
+
+.bg-\[\#00ADB5\]\/10 {
+  background-color: rgba(0, 173, 181, 0.1) !important;
+}
